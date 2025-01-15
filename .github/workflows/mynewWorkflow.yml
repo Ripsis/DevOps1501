@@ -1,0 +1,19 @@
+name: Test Manual Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      Environment:
+        description: "L'environnement que j'ai besoin de déployer"
+        required: true
+        default: '/dev'
+
+jobs:
+  manual-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Exemple
+        run: |
+         echo "Mon exemple"
+         echo "Env Name: ${{ github.event.inputs.Environment }}"
